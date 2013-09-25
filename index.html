@@ -4,4 +4,20 @@ layout: default
 
 <h1>Home</h1>
 <p>This is a paragraph of text...</p>
+
+<ul>
+	{% for dino in site.pages %}
+     {% if dino.category == "dino" %}
+		<li>
+    		<strong>{{dino.name}}</strong>
+       		{{dino.content}}
+        	<dl>
+        		<dt>Size</dt><dd>{{dino.size}}</dd>
+            	<dt>Colour</dt><dd>{{dino.colour}}</dd>
+            	<dt>Food Type</dt><dd>{{dino.type}}</dd>
+        	</dl>
+    	</li>
+      {% endif %}
+    {% endfor %}
+</ul>    
     
